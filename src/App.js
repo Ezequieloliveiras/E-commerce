@@ -7,16 +7,18 @@ import {
 
 import Produtos from "./Paginas/Produtos"
 import Menu from "./Paginas/Menu"
-
+import ModeloPadrão from "./templates/Padrão"
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/menu" element={<Menu />}/>
-          <Route path="/produtos" element={<Produtos />}/>
-      </Routes>
-    </Router>
+    <ModeloPadrão>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Menu />} />
+          <Route path="/produtos" element={<Produtos />} />
+        </Routes>
+      </Router>
+    </ModeloPadrão>
   )
 }
 

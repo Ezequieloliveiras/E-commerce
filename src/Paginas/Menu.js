@@ -1,10 +1,8 @@
 import React from "react"
-import Header from "../Partials/Header"
-
 
 function Menu(){
     return(
-        <Header />
+        <h1>Home</h1>
     )
 }
 
