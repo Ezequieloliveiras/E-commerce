@@ -5,19 +5,23 @@ import {
   Routes,
 } from "react-router-dom"
 
-
-import Menu from "./Paginas/Menu"
-import ModeloPadrão from "./templates/Padrão"
+import Home from "./paginas/Home"
+import Eletronic from './paginas/Electronics'
+import Jewelry from './paginas/Jewelry'
+import ClothesMan from './paginas/ClothesMan'
+import ClothesWomen from './paginas/ClothesWomen'
 
 function App() {
   return (
-    <ModeloPadrão>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Menu />} />
-        </Routes>
-      </Router>
-    </ModeloPadrão>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/electronics" element={<Eletronic />} />
+        <Route path="/jewelry" element={<Jewelry />} />
+        <Route path="/clothesMan" element={<ClothesMan />} />
+        <Route path="/clothesWomen" element={<ClothesWomen />} />
+      </Routes>
+    </Router>
   )
 }
 

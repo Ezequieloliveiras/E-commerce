@@ -11,10 +11,23 @@ import {
     Button,
 } from '@mui/material'
 
+import { useNavigate } from 'react-router-dom'
 import AdbIcon from '@mui/icons-material/Adb'
 
 const Header = () => {
     const [anchorElUser, setAnchorElUser] = React.useState(null)
+    const navigate = useNavigate()
+
+    const categories = [
+        { label: 'Electronics', route: '/electronics' },
+        { label: 'Clothes Man', route: '/clothesMan' },
+        { label: 'Clothes Women', route: '/clothesWomen' },
+        { label: 'Jewelry', route: '/jewelry' },
+    ]
+    
+    const handleMenuClick = route => {
+        navigate(route)
+    }
 
     const handleCloseUserMenu = () => {
         setAnchorElUser(null)
@@ -74,9 +87,11 @@ const Header = () => {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}
                         >
-                            <MenuItem onClick={handleCloseUserMenu}>Eletronic</MenuItem>
-                            <MenuItem onClick={handleCloseUserMenu}>Clothes</MenuItem>
-                            <MenuItem onClick={handleCloseUserMenu}>Accessories</MenuItem>
+                            {categories.map((category) => (
+                                <MenuItem key={category.route} onClick={() => handleMenuClick(category.route)}>
+                                    {category.label}
+                                </MenuItem>
+                            ))}
                         </Menu>
                     </Box>
                 </Toolbar>

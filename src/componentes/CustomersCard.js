@@ -8,10 +8,10 @@ import Button from '@mui/material/Button'
 
 
 const Cards = ({
+    category,
     title,
     price,
     description,
-    category,
     image,
 }) => {
 
@@ -29,8 +29,13 @@ const Cards = ({
             alignItems: 'center', // Centraliza horizontalmente
            
         }}>
+            
+            
+
+          
             <CardHeader
                 title={title}
+                
             />
 
             <CardMedia style={{
