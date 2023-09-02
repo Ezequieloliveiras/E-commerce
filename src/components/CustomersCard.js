@@ -1,20 +1,17 @@
 import React from 'react'
+
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
 import CardMedia from '@mui/material/CardMedia'
 import CardActions from '@mui/material/CardActions'
 import Button from '@mui/material/Button'
 
-
-
 const Cards = ({
     category,
     title,
     price,
-    description,
     image,
 }) => {
-
 
     return (
 
@@ -27,15 +24,11 @@ const Cards = ({
             flexDirection: 'column',
             justifyContent: 'space-between', // Alinha os elementos verticalmente ao redor
             alignItems: 'center', // Centraliza horizontalmente
-           
-        }}>
-            
-            
 
-          
+        }}>
+
             <CardHeader
                 title={title}
-                
             />
 
             <CardMedia style={{
@@ -54,13 +47,12 @@ const Cards = ({
                     flexDirection: 'column',
                     alignItems: 'center', // Centraliza os elementos horizontalmente
                 }}>
-                <p style={{ fontSize: 30, marginTop:'15px'}}>
+                <p style={{ fontSize: 30, marginTop: '15px' }}>
                     {`$ ${price}`}
                 </p>
-                <Button style={{marginTop:'10px'}} variant="contained">BUY</Button>
+                <Button style={{ marginTop: '10px' }} variant="contained">BUY</Button>
             </CardActions>
         </Card>
-
     )
 }
 

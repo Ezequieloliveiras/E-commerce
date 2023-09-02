@@ -3,19 +3,21 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
+  Navigate,
 } from "react-router-dom"
 
-import Home from "./paginas/Home"
-import Eletronic from './paginas/Electronics'
-import Jewelry from './paginas/Jewelry'
-import ClothesMan from './paginas/ClothesMan'
-import ClothesWomen from './paginas/ClothesWomen'
+import Home from "./pages/Home"
+import Eletronic from './pages/Electronics'
+import Jewelry from './pages/Jewelry'
+import ClothesMan from './pages/ClothesMan'
+import ClothesWomen from './pages/ClothesWomen'
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/electronics" element={<Eletronic />} />
         <Route path="/jewelry" element={<Jewelry />} />
         <Route path="/clothesMan" element={<ClothesMan />} />

@@ -1,4 +1,3 @@
-
 import Container from '@mui/material/Container'
 import { styled } from '@mui/material/styles'
 import Grid from '@mui/material/Grid'
@@ -6,7 +5,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 
 import Header from "../partials/Header"
-import CustomersCard from '../componentes/CustomersCard'
+import CustomersCard from '../components/CustomersCard'
 
 
 
@@ -14,15 +13,11 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   paddingTop: 15,
 }))
 
-
-
 const Padrão = ({ children }) => {
   const [products, setProducts] = useState([])
-  const category = "women's clothing"
 
-  
   useEffect(() => {
-    axios.get(`https://fakestoreapi.com/products/category/${category}`)
+    axios.get('https://fakestoreapi.com/products/category/electronics')
       .then(response => {
         const data = response.data
         setProducts(data)

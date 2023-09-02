@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 
 import Header from "../partials/Header"
-import CustomersCard from '../componentes/CustomersCard'
+import CustomersCard from '../components/CustomersCard'
 
 
 
@@ -17,10 +17,10 @@ const Padrão = ({ children }) => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    axios.get('https://fakestoreapi.com/products')
+    axios.get('https://fakestoreapi.com/products/category/jewelery')
       .then(response => {
         const data = response.data
-        console.log(data)
+        setProducts(data)
       })
   }, [])
 

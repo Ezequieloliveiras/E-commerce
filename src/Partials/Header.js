@@ -24,7 +24,7 @@ const Header = () => {
         { label: 'Clothes Women', route: '/clothesWomen' },
         { label: 'Jewelry', route: '/jewelry' },
     ]
-    
+
     const handleMenuClick = route => {
         navigate(route)
     }
