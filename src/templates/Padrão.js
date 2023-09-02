@@ -1,41 +1,35 @@
-import Container from '@mui/material/Container';
-import { styled } from '@mui/material/styles';
-import Grid from '@mui/material/Grid';
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+import Container from '@mui/material/Container'
+import { styled } from '@mui/material/styles'
+import Grid from '@mui/material/Grid'
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 
-import Header from "../partials/Header";
-import Cards from '../componentes/Cards';
+import Header from "../partials/Header"
+import Cards from '../componentes/CustomCard'
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   paddingTop: 15,
-}));
-
-const FixedSizeCards = ({ children }) => (
-  <Grid container justifyContent="center" alignItems="center">
-    {children}
-  </Grid>
-);
+}))
 
 const Padrão = ({ children }) => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([])
 
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products')
       .then(response => {
-        const data = response.data;
-        setProducts(data);
-      });
-  }, []);
+        const data = response.data
+        setProducts(data)
+      })
+  }, [])
 
   return (
     <div style={{ background: '#e0e0e0' }}>
       <Header />
       <StyledContainer style={{ paddingLeft: "0px", paddingRight: "0px" }}>
         {children}
-        <FixedSizeCards>
+        <Grid container spacing={2}>
           {products.map(item => (
-            <Grid item xs={12} md={4} style={{ width: '400px', height: '650px', padding: '15px', marginBottom:'60px' }} key={item.id}>
+            <Grid item xs={12} md={4} key={item.id} style={{ marginBottom: '60px' }}>
               <Cards
                 title={item.title}
                 price={item.price}
@@ -45,10 +39,10 @@ const Padrão = ({ children }) => {
               />
             </Grid>
           ))}
-        </FixedSizeCards>
+        </Grid>
       </StyledContainer>
     </div>
-  );
-};
+  )
+}
 
-export default Padrão;
+export default Padrão

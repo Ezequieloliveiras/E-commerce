@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react';
 
 import {
     AppBar,
@@ -6,29 +6,27 @@ import {
     Toolbar,
     Typography,
     Menu,
+    MenuItem,
     Container,
     Button,
-} from '@mui/material'
+} from '@mui/material';
 
-import AdbIcon from '@mui/icons-material/Adb'
-
-const pages = ['Menu', 'Produtos']
+import AdbIcon from '@mui/icons-material/Adb';
 
 const Header = () => {
-
-    const [anchorElNav, setAnchorElNav] = React.useState(null)
-    const [anchorElUser, setAnchorElUser] = React.useState(null)
+    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const [anchorElUser, setAnchorElUser] = React.useState(null);
 
     const handleCloseNavMenu = () => {
-        setAnchorElNav(null)
-    }
+        setAnchorElNav(null);
+    };
 
     const handleCloseUserMenu = () => {
-        setAnchorElUser(null)
-    }
+        setAnchorElUser(null);
+    };
 
     return (
-        <AppBar position="static" >
+        <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -47,13 +45,13 @@ const Header = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        MULTI THINGS
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
 
                         <Menu
-                            id="menu-appbar"
+                            id="menu-submenu"
                             anchorEl={anchorElNav}
                             anchorOrigin={{
                                 vertical: 'bottom',
@@ -66,46 +64,29 @@ const Header = () => {
                             }}
                             open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
-                            sx={{
-                                display: { xs: 'block', md: 'none' },
-                            }}
                         >
-
+                            {/* Adicione os itens do submenu aqui */}
+                            <MenuItem onClick={handleCloseNavMenu}>Submenu Item 1</MenuItem>
+                            <MenuItem onClick={handleCloseNavMenu}>Submenu Item 2</MenuItem>
                         </Menu>
                     </Box>
                     <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-                    <Typography
-                        variant="h5"
-                        noWrap
-                        component="a"
-                        href="/"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        LOGO
-                    </Typography>
+
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
+                        <Button
+                            sx={{ my: 2, color: 'white', display: 'block' }}
+                        >
+                            HOME
+                        </Button>
+                        <Button
+                            onClick={(event) => setAnchorElUser(event.currentTarget)}
+                            sx={{ my: 2, color: 'white', display: 'block' }}
+                        >
+                            CATEGORY
+                        </Button>
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
-
                         <Menu
                             sx={{ mt: '45px' }}
                             id="menu-appbar"
@@ -122,12 +103,15 @@ const Header = () => {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}
                         >
+                            <MenuItem onClick={handleCloseUserMenu}>Eletronic</MenuItem>
+                            <MenuItem onClick={handleCloseUserMenu}>Clothes</MenuItem>
+                            <MenuItem onClick={handleCloseUserMenu}>Accessories</MenuItem>
                         </Menu>
                     </Box>
                 </Toolbar>
             </Container>
         </AppBar>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;
