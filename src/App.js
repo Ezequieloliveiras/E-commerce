@@ -5,7 +5,7 @@ import {
   Routes,
 } from "react-router-dom"
 
-import Produtos from "./Paginas/Produtos"
+
 import Menu from "./Paginas/Menu"
 import ModeloPadrão from "./templates/Padrão"
 
@@ -15,7 +15,6 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Menu />} />
-          <Route path="/produtos" element={<Produtos />} />
         </Routes>
       </Router>
     </ModeloPadrão>

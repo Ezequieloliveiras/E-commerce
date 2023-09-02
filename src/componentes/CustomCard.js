@@ -56,8 +56,6 @@ const Cards = ({
             </CardActions>
         </Card>
 
-
-
     )
 }
 

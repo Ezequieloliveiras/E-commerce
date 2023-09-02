@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 import {
     AppBar,
@@ -9,21 +9,16 @@ import {
     MenuItem,
     Container,
     Button,
-} from '@mui/material';
+} from '@mui/material'
 
-import AdbIcon from '@mui/icons-material/Adb';
+import AdbIcon from '@mui/icons-material/Adb'
 
 const Header = () => {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
+    const [anchorElUser, setAnchorElUser] = React.useState(null)
 
     const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
+        setAnchorElUser(null)
+    }
 
     return (
         <AppBar position="static">
@@ -47,30 +42,6 @@ const Header = () => {
                     >
                         MULTI THINGS
                     </Typography>
-
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-
-                        <Menu
-                            id="menu-submenu"
-                            anchorEl={anchorElNav}
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'left',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
-                            }}
-                            open={Boolean(anchorElNav)}
-                            onClose={handleCloseNavMenu}
-                        >
-                            {/* Adicione os itens do submenu aqui */}
-                            <MenuItem onClick={handleCloseNavMenu}>Submenu Item 1</MenuItem>
-                            <MenuItem onClick={handleCloseNavMenu}>Submenu Item 2</MenuItem>
-                        </Menu>
-                    </Box>
-                    <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         <Button
@@ -111,7 +82,7 @@ const Header = () => {
                 </Toolbar>
             </Container>
         </AppBar>
-    );
-};
+    )
+}
 
-export default Header;
+export default Header
