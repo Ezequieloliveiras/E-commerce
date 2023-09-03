@@ -15,7 +15,6 @@ const Cards = ({
             padding: '20px',
             width: '280px',
             height: '260px',
-            marginBottom:'70px',
             position: 'relative'
         }}>
             <h1 style={{

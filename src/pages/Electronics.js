@@ -1,36 +1,42 @@
-import Container from '@mui/material/Container'
-import { styled } from '@mui/material/styles'
-import Grid from '@mui/material/Grid'
+import {
+  Container,
+  styled,
+  Grid
+} from '@mui/material'
+
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
 import Header from "../partials/Header"
 import CustomersCard from '../components/CustomersCard'
-
+import Footer from '../bottomfooter/Footer'
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   paddingTop: 0,
 }))
 
+
 const Padrão = ({ children }) => {
   const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products/category/electronics')
       .then(response => {
         const data = response.data
         setProducts(data)
+        setLoading(false)
       })
   }, [])
 
   return (
     <div style={{ background: '#e0e0e0' }}>
       <Header />
-      <StyledContainer style={{ paddingLeft: "0px", paddingRight: "0px" }}>
+      <StyledContainer>
         {children}
-        <Grid container spacing={2}>
+        <Grid container>
           {products.map(item => (
-            <Grid item xs={12} md={4} key={item.id} style={{ marginBottom: '60px' }}>
+            <Grid item xs={12} md={4} key={item.id}>
               <CustomersCard
                 category={item.category}
                 title={item.title}
@@ -42,8 +48,10 @@ const Padrão = ({ children }) => {
           ))}
         </Grid>
       </StyledContainer>
+      {!loading && <Footer />}
     </div>
   )
+
 }
 
 export default Padrão

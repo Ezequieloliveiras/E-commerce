@@ -25,6 +25,13 @@ const Header = () => {
         { label: 'Clothes Women', route: '/clothesWomen' },
         { label: 'Jewelry', route: '/jewelry' },
     ]
+    const home = [
+        { label: 'HOME', route: '/home' },
+    ]
+
+    const handleHomeClick = route => {
+        navigate(route)
+    }
 
     const handleMenuClick = route => {
         navigate(route)
@@ -41,9 +48,9 @@ const Header = () => {
                     <Box sx={{
                         display: 'flex',
                         alignItems: 'center',
-                        justifyContent: 'space-between',                      
+                        justifyContent: 'space-between',
                     }}>
-                        <Box sx={{ display: 'flex', alignItems: 'center'}}>
+                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
 
                             <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                             <Typography
@@ -66,11 +73,15 @@ const Header = () => {
                         </Box>
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                            <Button
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                HOME
-                            </Button>
+
+
+                            {home.map((home) => (
+                                <Button key={home.route} onClick={() => handleHomeClick(home.route)}>
+                                    <span style={{ my: 2, color: 'white', display: 'block' }}>{home.label}</span>
+                                </Button>
+                            ))}
+
+
                             <Button
                                 onClick={(event) => setAnchorElUser(event.currentTarget)}
                                 sx={{ my: 2, color: 'white', display: 'block' }}

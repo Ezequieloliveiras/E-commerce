@@ -17,8 +17,9 @@ const Cards = ({
 
         <Card sx={{
             maxWidth: 345,
-            height: '100%',
-            marginTop: '70px',
+            height: '550px',
+            marginTop:'60px',
+            marginLeft:'19px',
             padding: '20px',
             position: 'relative',
             display: 'flex',
@@ -48,7 +49,7 @@ const Cards = ({
                     flexDirection: 'column',
                     alignItems: 'center', // Centraliza os elementos horizontalmente
                 }}>
-                <p style={{ fontSize: 30, marginTop: '15px' }}>
+                <p style={{ fontSize: 30 }}>
                     {`$ ${price}`}
                 </p>
                 <Button style={{ marginTop: '10px' }} variant="contained">BUY</Button>
