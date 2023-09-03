@@ -15,7 +15,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   paddingTop: 0,
 }))
 
-const Padrão = ({ children }) => {
+const ClothesMan = ({ children }) => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -54,4 +54,4 @@ const Padrão = ({ children }) => {
   )
 }
 
-export default Padrão
+export default ClothesMan
