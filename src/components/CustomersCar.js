@@ -11,10 +11,13 @@ const Cards = ({
 }) => {
     return (
         <Card sx={{
-            display: 'block',
+            maxWidth: 345,
+            height: '280px',
+            marginLeft: '19px',
             padding: '20px',
-            width: '280px',
-            height: '260px',
+            position: 'relative',
+            display: 'block',
+            alignItems: 'center', // Centraliza horizontalmente
             position: 'relative'
         }}>
             <h1 style={{
