@@ -25,7 +25,7 @@ const Padrão = ({ children }) => {
   return (
     <div style={{ background: '#e0e0e0' }}>
       <Header />
-      <StyledContainer style={{ paddingLeft: "0px", paddingRight: "0px", paddingBottom:'70px' }}>
+      <StyledContainer style={{ paddingLeft: "0px", paddingRight: "0px" }}>
         {children}
         <Grid container spacing={2}>
           {products.map(item => (
