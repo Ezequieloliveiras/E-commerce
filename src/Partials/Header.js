@@ -29,9 +29,17 @@ const Header = () => {
         { label: 'HOME', route: '/home' },
     ]
 
+    const car = [
+        { label: { ShoppingCartIcon }, route: '/car' }
+    ]
+
     const handleHomeClick = route => {
         navigate(route)
     }
+    
+    const handleCarClick = route => [
+        navigate(route)
+    ]
 
     const handleMenuClick = route => {
         navigate(route)
@@ -51,7 +59,6 @@ const Header = () => {
                         justifyContent: 'space-between',
                     }}>
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-
                             <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                             <Typography
                                 variant="h6"
@@ -71,30 +78,30 @@ const Header = () => {
                                 MULTI THINGS
                             </Typography>
                         </Box>
-
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-
-
                             {home.map((home) => (
                                 <Button key={home.route} onClick={() => handleHomeClick(home.route)}>
                                     <span style={{ my: 2, color: 'white', display: 'block' }}>{home.label}</span>
                                 </Button>
                             ))}
-
-
                             <Button
                                 onClick={(event) => setAnchorElUser(event.currentTarget)}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 CATEGORY
                             </Button>
-
                         </Box>
                     </Box>
-                    <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
-                        <Button onClick={() => { }}>
-                            <ShoppingCartIcon style={{ color: 'white' }} />
-                        </Button>
+                    <div style={{
+                        width: '100%',
+                        display: 'flex',
+                        justifyContent: 'flex-end'
+                    }}>
+                        {car.map((car) => (
+                            <Button key={car.route} onClick={() => handleCarClick(car.route)}>
+                                <ShoppingCartIcon style={{ color: 'white' }} />
+                            </Button>
+                        ))}
                     </div>
                     <Box sx={{ flexGrow: 0 }}>
                         <Menu
