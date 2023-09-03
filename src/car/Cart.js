@@ -1,24 +1,22 @@
-
 import Container from '@mui/material/Container'
 import { styled } from '@mui/material/styles'
 import Grid from '@mui/material/Grid'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
+
 import Header from "../partials/Header"
-import CustomersCard from '../components/CustomersCard'
+import CustomersCard from '../components/CustomersCar'
 
 const StyledContainer = styled(Container)(({ theme }) => ({
-  paddingTop: 0,
+  paddingTop: 15,
 }))
 
 const Padrão = ({ children }) => {
   const [products, setProducts] = useState([])
-  
-  const category = "men's clothing"
 
   useEffect(() => {
-    axios.get(`https://fakestoreapi.com/products/category/${category}`)
+    axios.get('https://fakestoreapi.com/carts')
       .then(response => {
         const data = response.data
         setProducts(data)
@@ -34,10 +32,10 @@ const Padrão = ({ children }) => {
           {products.map(item => (
             <Grid item xs={12} md={4} key={item.id} style={{ marginBottom: '60px', paddingBottom:'70px' }}>
               <CustomersCard
-                category={item.category}
-                title={item.title}
-                price={item.price}
-                description={item.description}
+                id={item.id}
+                userId={item.userId}
+                date={item.date}
+                products={item.products}
                 image={item.image}
               />
             </Grid>

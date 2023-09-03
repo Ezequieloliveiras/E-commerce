@@ -11,6 +11,8 @@ import Eletronic from './pages/Electronics'
 import Jewelry from './pages/Jewelry'
 import ClothesMan from './pages/ClothesMan'
 import ClothesWomen from './pages/ClothesWomen'
+import Cart from './car/Cart'
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
         <Route path="/jewelry" element={<Jewelry />} />
         <Route path="/clothesMan" element={<ClothesMan />} />
         <Route path="/clothesWomen" element={<ClothesWomen />} />
+        <Route path="/car" element={<Cart />} />
       </Routes>
     </Router>
   )

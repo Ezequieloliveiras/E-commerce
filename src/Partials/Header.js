@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import {
     AppBar,
@@ -11,7 +12,7 @@ import {
     Button,
 } from '@mui/material'
 
-import { useNavigate } from 'react-router-dom'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import AdbIcon from '@mui/icons-material/Adb'
 
 const Header = () => {
@@ -37,39 +38,53 @@ const Header = () => {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        href="/"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        MULTI THINGS
-                    </Typography>
+                    <Box sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',                      
+                    }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center'}}>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        <Button
-                            sx={{ my: 2, color: 'white', display: 'block' }}
-                        >
-                            HOME
-                        </Button>
-                        <Button
-                            onClick={(event) => setAnchorElUser(event.currentTarget)}
-                            sx={{ my: 2, color: 'white', display: 'block' }}
-                        >
-                            CATEGORY
-                        </Button>
+                            <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                            <Typography
+                                variant="h6"
+                                noWrap
+                                component="a"
+                                href="/"
+                                sx={{
+                                    mr: 2,
+                                    display: { xs: 'none', md: 'flex' },
+                                    fontFamily: 'monospace',
+                                    fontWeight: 700,
+                                    letterSpacing: '.3rem',
+                                    color: 'inherit',
+                                    textDecoration: 'none',
+                                }}
+                            >
+                                MULTI THINGS
+                            </Typography>
+                        </Box>
+
+                        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                            <Button
+                                sx={{ my: 2, color: 'white', display: 'block' }}
+                            >
+                                HOME
+                            </Button>
+                            <Button
+                                onClick={(event) => setAnchorElUser(event.currentTarget)}
+                                sx={{ my: 2, color: 'white', display: 'block' }}
+                            >
+                                CATEGORY
+                            </Button>
+
+                        </Box>
                     </Box>
-
+                    <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
+                        <Button onClick={() => { }}>
+                            <ShoppingCartIcon style={{ color: 'white' }} />
+                        </Button>
+                    </div>
                     <Box sx={{ flexGrow: 0 }}>
                         <Menu
                             sx={{ mt: '45px' }}

@@ -8,9 +8,8 @@ import Header from "../partials/Header"
 import CustomersCard from '../components/CustomersCard'
 
 
-
 const StyledContainer = styled(Container)(({ theme }) => ({
-  paddingTop: 15,
+  paddingTop: 0,
 }))
 
 const Padrão = ({ children }) => {

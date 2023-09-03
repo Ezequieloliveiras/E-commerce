@@ -18,6 +18,7 @@ const Cards = ({
         <Card sx={{
             maxWidth: 345,
             height: '100%',
+            marginTop: '70px',
             padding: '20px',
             position: 'relative',
             display: 'flex',

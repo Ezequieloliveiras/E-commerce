@@ -7,10 +7,8 @@ import { useState, useEffect } from 'react'
 import Header from "../partials/Header"
 import CustomersCard from '../components/CustomersCard'
 
-
-
 const StyledContainer = styled(Container)(({ theme }) => ({
-  paddingTop: 15,
+  paddingTop: 0,
 }))
 
 const Padrão = ({ children }) => {
@@ -27,7 +25,7 @@ const Padrão = ({ children }) => {
   return (
     <div style={{ background: '#e0e0e0' }}>
       <Header />
-      <StyledContainer style={{ paddingLeft: "0px", paddingRight: "0px" }}>
+      <StyledContainer style={{ paddingLeft: "0px", paddingRight: "0px", paddingBottom:'70px' }}>
         {children}
         <Grid container spacing={2}>
           {products.map(item => (
