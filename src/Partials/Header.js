@@ -13,7 +13,7 @@ import {
 } from '@mui/material'
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
-import AdbIcon from '@mui/icons-material/Adb'
+import RoofingIcon from '@mui/icons-material/Roofing';
 
 const Header = () => {
     const [anchorElUser, setAnchorElUser] = React.useState(null)
@@ -50,7 +50,7 @@ const Header = () => {
     }
 
     return (
-        <AppBar position="static">
+        <AppBar position="static" style={{background:'#212121'}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box sx={{
@@ -59,7 +59,7 @@ const Header = () => {
                         justifyContent: 'space-between',
                     }}>
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                            <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                            <RoofingIcon sx={{ display: { xs: 'none', md: 'flex'}, mr: 2 }} />
                             <Typography
                                 variant="h6"
                                 noWrap

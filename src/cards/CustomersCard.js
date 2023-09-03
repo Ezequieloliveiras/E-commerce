@@ -52,7 +52,7 @@ const Cards = ({
                 <p style={{ fontSize: 30 }}>
                     {`$ ${price}`}
                 </p>
-                <Button style={{ marginTop: '10px' }} variant="contained">BUY</Button>
+                <Button style={{ marginTop: '10px', background:'#424242' }} variant="contained">BUY</Button>
             </CardActions>
         </Card>
     )

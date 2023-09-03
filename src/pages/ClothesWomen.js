@@ -8,14 +8,15 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 
 import Header from "../partials/Header"
-import CustomersCard from '../components/CustomersCard'
+import CustomersCard from '../cards/CustomersCard'
 import Footer from '../bottomfooter/Footer'
+import Title from '../templates/WomenText'
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   paddingTop: 0,
 }))
 
-const Padrão = ({ children }) => {
+const ClothesWomen = ({ children }) => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -35,6 +36,7 @@ const Padrão = ({ children }) => {
     <div style={{ background: '#e0e0e0' }}>
       <Header />
       <StyledContainer>
+      {!loading && <Title />}
         {children}
         <Grid container>
           {products.map(item => (
@@ -55,4 +57,4 @@ const Padrão = ({ children }) => {
   )
 }
 
-export default Padrão
+export default ClothesWomen

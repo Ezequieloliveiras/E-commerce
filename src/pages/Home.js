@@ -8,14 +8,13 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 
 import Header from "../partials/Header"
-import CustomersCard from '../components/CustomersCard'
+import CustomersCard from '../cards/CustomersCard'
 import Footer from '../bottomfooter/Footer'
-
+import Title from '../templates/Text'
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   paddingTop: 0,
 }))
-
 
 const Home = ({ children }) => {
   const [products, setProducts] = useState([])
@@ -34,6 +33,9 @@ const Home = ({ children }) => {
   return (
     <div style={{ background: '#e0e0e0' }}>
       <Header />
+     
+      {!loading &&  <Title />}
+      
       <StyledContainer>
         {children}
         <Grid container>

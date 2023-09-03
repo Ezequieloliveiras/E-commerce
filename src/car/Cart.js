@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react'
 import Footer from '../bottomfooter/Footer'
 
 import Header from "../partials/Header"
-import CustomersCard from '../components/CustomersCar'
+import CustomersCard from '../cards/CustomersCar'
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   paddingTop: 0,
