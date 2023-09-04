@@ -4,7 +4,6 @@ import Button from '@mui/material/Button'
 import DeleteIcon from '@mui/icons-material/Delete'
 
 const Cards = ({
-    id,
     userId,
     date,
     products,

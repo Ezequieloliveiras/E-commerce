@@ -7,7 +7,6 @@ import CardActions from '@mui/material/CardActions'
 import Button from '@mui/material/Button'
 
 const Cards = ({
-    category,
     title,
     price,
     image,
@@ -18,15 +17,14 @@ const Cards = ({
         <Card sx={{
             maxWidth: 345,
             height: '550px',
-            marginTop:'60px',
-            marginLeft:'19px',
+            marginTop: '60px',
+            marginLeft: '19px',
             padding: '20px',
             position: 'relative',
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-between', 
-            alignItems: 'center', 
-
+            justifyContent: 'space-between',
+            alignItems: 'center',
         }}>
 
             <CardHeader
@@ -52,7 +50,7 @@ const Cards = ({
                 <p style={{ fontSize: 30 }}>
                     {`$ ${price}`}
                 </p>
-                <Button style={{ marginTop: '10px', background:'#424242' }} variant="contained">BUY</Button>
+                <Button style={{ marginTop: '10px', background: '#424242' }} variant="contained">BUY</Button>
             </CardActions>
         </Card>
     )

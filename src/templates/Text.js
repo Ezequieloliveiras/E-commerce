@@ -2,7 +2,7 @@ import { styled } from '@mui/material'
 import Typography from '@mui/material/Typography'
 
 const Container = styled('h1')({
-  padding: '30px 0 0 115px',
+  padding: '30px 0 0 155px',
 })
 
 const Title = () => {

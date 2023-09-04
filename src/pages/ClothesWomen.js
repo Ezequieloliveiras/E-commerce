@@ -1,13 +1,13 @@
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+
 import {
   Container,
   styled,
   Grid
 } from '@mui/material'
 
-import axios from 'axios'
-import { useState, useEffect } from 'react'
-
-import Header from "../partials/Header"
+import Header from "../partials/HeaderGeneral"
 import CustomersCard from '../cards/CustomersCard'
 import Footer from '../bottomfooter/Footer'
 import Title from '../templates/WomenText'
@@ -19,9 +19,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 const ClothesWomen = ({ children }) => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
-
   const category = "women's clothing"
-
 
   useEffect(() => {
     axios.get(`https://fakestoreapi.com/products/category/${category}`)
@@ -36,7 +34,7 @@ const ClothesWomen = ({ children }) => {
     <div style={{ background: '#e0e0e0' }}>
       <Header />
       <StyledContainer>
-      {!loading && <Title />}
+        {!loading && <Title />}
         {children}
         <Grid container>
           {products.map(item => (

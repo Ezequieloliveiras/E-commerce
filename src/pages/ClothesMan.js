@@ -1,13 +1,13 @@
+import axios from 'axios'
+import { useState, useEffect } from 'react'
+
 import {
   Container,
   styled,
   Grid
 } from '@mui/material'
 
-import axios from 'axios'
-import { useState, useEffect } from 'react'
-
-import Header from "../partials/Header"
+import Header from "../partials/HeaderGeneral"
 import CustomersCard from '../cards/CustomersCard'
 import Footer from '../bottomfooter/Footer'
 import Title from '../templates/ManText'
@@ -35,7 +35,7 @@ const ClothesMan = ({ children }) => {
     <div style={{ background: '#e0e0e0' }}>
       <Header />
       <StyledContainer>
-      {!loading && <Title />}
+        {!loading && <Title />}
         {children}
         <Grid container>
           {products.map(item => (

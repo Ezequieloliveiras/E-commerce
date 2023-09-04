@@ -1,13 +1,13 @@
+import axios from 'axios'
+import { useState, useEffect } from 'react'
+
 import {
     Container,
     styled,
     Grid
 } from '@mui/material'
 
-import axios from 'axios'
-import { useState, useEffect } from 'react'
-
-import Header from "../partials/Header"
+import Header from "../partials/HeaderGeneral"
 import Perfil from '../profile/Profile'
 import Footer from '../bottomfooter/Footer'
 import Title from '../templates/LoginText'
