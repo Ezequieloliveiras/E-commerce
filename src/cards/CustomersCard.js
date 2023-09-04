@@ -24,8 +24,8 @@ const Cards = ({
             position: 'relative',
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-between', // Alinha os elementos verticalmente ao redor
-            alignItems: 'center', // Centraliza horizontalmente
+            justifyContent: 'space-between', 
+            alignItems: 'center', 
 
         }}>
 

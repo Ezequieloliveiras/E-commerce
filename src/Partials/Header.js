@@ -29,6 +29,10 @@ const Header = () => {
         { label: 'HOME', route: '/home' },
     ]
 
+    const login = [
+        { label: 'LOGIN: Johnd', route: '/login' },
+    ]
+
     const car = [
         { label: { ShoppingCartIcon }, route: '/car' }
     ]
@@ -36,7 +40,11 @@ const Header = () => {
     const handleHomeClick = route => {
         navigate(route)
     }
-    
+
+    const handleLoginClick = route => {
+        navigate(route)
+    }
+
     const handleCarClick = route => [
         navigate(route)
     ]
@@ -50,7 +58,7 @@ const Header = () => {
     }
 
     return (
-        <AppBar position="static" style={{background:'#212121'}}>
+        <AppBar position="static" style={{ background: '#212121' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box sx={{
@@ -59,7 +67,7 @@ const Header = () => {
                         justifyContent: 'space-between',
                     }}>
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                            <RoofingIcon sx={{ display: { xs: 'none', md: 'flex'}, mr: 2 }} />
+                            <RoofingIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 2 }} />
                             <Typography
                                 variant="h6"
                                 noWrap
@@ -102,7 +110,15 @@ const Header = () => {
                                 <ShoppingCartIcon style={{ color: 'white' }} />
                             </Button>
                         ))}
+                        {login.map((login) => (
+                            <Button key={login.route} onClick={() => handleLoginClick(login.route)}>
+                                <span style={{ marginTop: '2px', color: 'white', display: 'block' }}>{login.label}</span>
+                            </Button>
+                        ))}
                     </div>
+
+
+
                     <Box sx={{ flexGrow: 0 }}>
                         <Menu
                             sx={{ mt: '45px' }}
