@@ -11,6 +11,7 @@ import {
     Container,
     Button,
 } from '@mui/material'
+import Search from '../search/Search'
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import RoofingIcon from '@mui/icons-material/Roofing';
@@ -60,7 +61,7 @@ const Header = () => {
     return (
         <AppBar position="static" style={{ background: '#212121' }}>
             <Container maxWidth="xl">
-                <Toolbar disableGutters>
+                <Toolbar disableGutters style={{position:'relative'}}>
                     <Box sx={{
                         display: 'flex',
                         alignItems: 'center',
@@ -100,6 +101,7 @@ const Header = () => {
                             </Button>
                         </Box>
                     </Box>
+                    <Search />
                     <div style={{
                         width: '100%',
                         display: 'flex',
@@ -116,9 +118,6 @@ const Header = () => {
                             </Button>
                         ))}
                     </div>
-
-
-
                     <Box sx={{ flexGrow: 0 }}>
                         <Menu
                             sx={{ mt: '45px' }}
@@ -141,8 +140,10 @@ const Header = () => {
                                     {category.label}
                                 </MenuItem>
                             ))}
+
                         </Menu>
                     </Box>
+                        
                 </Toolbar>
             </Container>
         </AppBar>
