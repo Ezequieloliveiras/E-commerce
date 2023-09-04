@@ -1,10 +1,15 @@
-import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import InputBase from '@mui/material/InputBase';
-import SearchIcon from '@mui/icons-material/Search';
+import * as React from 'react'
+
+import {
+    styled,
+    alpha,
+    Box,
+    Toolbar,
+    InputBase,
+} from '@mui/material'
+
+
+import SearchIcon from '@mui/icons-material/Search'
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -20,7 +25,7 @@ const Search = styled('div')(({ theme }) => ({
         marginLeft: theme.spacing(3),
         width: 'auto',
     },
-}));
+}))
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
     padding: theme.spacing(0, 2),
@@ -30,7 +35,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-}));
+}))
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
@@ -42,25 +47,30 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
             width: '20ch',
         },
     },
-}));
+}))
 
-const PrimarySearchAppBar = () => {
+const PrimarySearchAppBar = ({ setSearchTerm }) => {
+    const handleSearchChange = (event) => {
+      setSearchTerm(event.target.value);
+    };
+  
     return (
-        <Box sx={{ flexGrow: 1, marginLeft:'90px' }}>
-            <Toolbar>
-                <Search>
-                    <SearchIconWrapper>
-                        <SearchIcon />
-                    </SearchIconWrapper>
-                    <StyledInputBase
-                        placeholder="Pesquisar..."
-                        inputProps={{ 'aria-label': 'search' }}
-                    />
-                </Search>
-            </Toolbar>
-        </Box>
+      <Box sx={{ flexGrow: 1, marginLeft: '90px' }}>
+        <Toolbar>
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Pesquisar..."
+              inputProps={{ 'aria-label': 'search' }}
+              onChange={handleSearchChange} // Adicione este evento onChange
+            />
+          </Search>
+        </Toolbar>
+      </Box>
     );
-}
+  };
 
 
 export default PrimarySearchAppBar

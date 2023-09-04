@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import PrimarySearchAppBar from '../search/Search';
 
 import {
     AppBar,
@@ -11,12 +12,11 @@ import {
     Container,
     Button,
 } from '@mui/material'
-import Search from '../search/Search'
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import RoofingIcon from '@mui/icons-material/Roofing';
 
-const Header = () => {
+const Header = ({ setSearchTerm }) => {
     const [anchorElUser, setAnchorElUser] = React.useState(null)
     const navigate = useNavigate()
 
@@ -46,9 +46,9 @@ const Header = () => {
         navigate(route)
     }
 
-    const handleCarClick = route => [
+    const handleCarClick = route => {
         navigate(route)
-    ]
+    }
 
     const handleMenuClick = route => {
         navigate(route)
@@ -101,7 +101,8 @@ const Header = () => {
                             </Button>
                         </Box>
                     </Box>
-                    <Search />
+                    <PrimarySearchAppBar setSearchTerm={setSearchTerm} />
+
                     <div style={{
                         width: '100%',
                         display: 'flex',
@@ -140,10 +141,8 @@ const Header = () => {
                                     {category.label}
                                 </MenuItem>
                             ))}
-
                         </Menu>
                     </Box>
-                        
                 </Toolbar>
             </Container>
         </AppBar>
