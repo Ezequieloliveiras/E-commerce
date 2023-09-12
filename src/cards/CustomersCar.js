@@ -5,9 +5,11 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import ModalConfirm from '../modal/ModalConfirm'
 
 const Cards = ({
+    id,
     userId,
     date,
     products,
+    onRemoveCustomer
 }) => {
 
     
@@ -16,8 +18,8 @@ const Cards = ({
         setOpenModal(!openModal)
     }
 
-    const handleConfirmModal = () => {
-        alert('ok')
+    const handleConfirmModal = id => {
+        onRemoveCustomer(id)
     }
 
     const handleRemoveCustomer = () => {

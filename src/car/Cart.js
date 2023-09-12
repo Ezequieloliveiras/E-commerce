@@ -10,7 +10,7 @@ import Footer from '../bottomfooter/Footer'
 
 import Header from "../partials/Header"
 import CustomersCard from '../cards/CustomersCar'
-
+ 
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   paddingTop: 0,
@@ -29,6 +29,13 @@ const Cart = ({ children }) => {
       })
   }, [])
 
+  const handleRemoveCustomer = id => {
+    axios.delete(`https://fakestoreapi.com/carts/${id}`)
+    .then(response => {
+      console.log(response)
+    })
+  }
+
   return (
     <div style={{ background: '#e0e0e0' }}>
       <Header />
@@ -43,6 +50,7 @@ const Cart = ({ children }) => {
                 date={item.date}
                 products={item.products}
                 image={item.image}
+                onRemoveCustomer={() => handleRemoveCustomer(item.id)}
               />
             </Grid>
           ))}
