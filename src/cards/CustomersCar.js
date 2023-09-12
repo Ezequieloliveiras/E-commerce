@@ -18,8 +18,8 @@ const Cards = ({
         setOpenModal(!openModal)
     }
 
-    const handleConfirmModal = id => {
-        onRemoveCustomer(id)
+    const handleConfirmModal = userId => {
+        onRemoveCustomer(userId)
     }
 
     const handleRemoveCustomer = () => {

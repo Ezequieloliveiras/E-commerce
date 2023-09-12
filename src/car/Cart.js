@@ -29,10 +29,11 @@ const Cart = ({ children }) => {
       })
   }, [])
 
-  const handleRemoveCustomer = id => {
-    axios.delete(`https://fakestoreapi.com/carts/${id}`)
-    .then(response => {
-      console.log(response)
+  const handleRemoveCustomer = userId => {
+    axios.delete(`https://fakestoreapi.com/carts/${userId}`)
+    .then(() => {
+      const newCustomerState = products.filter(products => products.userId !== userId)
+      setProducts(newCustomerState)
     })
   }
 
@@ -50,7 +51,7 @@ const Cart = ({ children }) => {
                 date={item.date}
                 products={item.products}
                 image={item.image}
-                onRemoveCustomer={() => handleRemoveCustomer(item.id)}
+                onRemoveCustomer={() => handleRemoveCustomer(item.userId)}
               />
             </Grid>
           ))}
