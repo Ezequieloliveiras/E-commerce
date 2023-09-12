@@ -11,6 +11,7 @@ import Footer from '../bottomfooter/Footer'
 import Header from "../partials/Header"
 import CustomersCard from '../cards/CustomersCar'
 
+
 const StyledContainer = styled(Container)(({ theme }) => ({
   paddingTop: 0,
 }))
