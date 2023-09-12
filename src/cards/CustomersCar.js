@@ -1,9 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Card from '@mui/material/Card'
 import Button from '@mui/material/Button'
 import DeleteIcon from '@mui/icons-material/Delete'
 import ModalConfirm from '../modal/ModalConfirm'
-
 
 const Cards = ({
     userId,
@@ -11,9 +10,9 @@ const Cards = ({
     products,
 }) => {
 
+    
     const [openModal, setOpenModal] = useState(false)
-
-    const handletoggleOpenModal = () => {
+    const handleToggleOpenModal = () => {
         setOpenModal(!openModal)
     }
 
@@ -22,8 +21,9 @@ const Cards = ({
     }
 
     const handleRemoveCustomer = () => {
-        handletoggleOpenModal()
+        handleToggleOpenModal()
     }
+
 
     return (
         <>
@@ -58,7 +58,7 @@ const Cards = ({
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}>
-                    <Button variant="outlined" onClick={handleRemoveCustomer} startIcon={<DeleteIcon/>} style={{
+                    <Button variant="outlined" onClick={handleRemoveCustomer} startIcon={<DeleteIcon />} style={{
                         margin: '20px',
                         position: 'absolute',
                         bottom: '10px',
@@ -70,13 +70,12 @@ const Cards = ({
                 </div>
             </Card>
             <ModalConfirm
-                 open={openModal}
-                 onClose={handletoggleOpenModal}
-                 onConfirm={handleConfirmModal}
+                open={openModal}
+                onClose={handleToggleOpenModal}
+                onConfirm={handleConfirmModal}
                 title='Deseja realmente excluir esse cadastro?'
                 message='Ao confirmar nao será possível reverter essa operação'
-                />
-
+            />
         </>
     )
 }
