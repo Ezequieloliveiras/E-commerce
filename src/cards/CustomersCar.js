@@ -6,33 +6,33 @@ import ModalConfirm from '../modal/ModalConfirm'
 
 const Cards = ({
     id,
-    userId,
-    date,
-    products,
-    onRemoveCustomer
+    onRemoveCustomer,
+    title,
+    price,
+    description,
+    image,
 }) => {
 
-    
     const [openModal, setOpenModal] = useState(false)
     const handleToggleOpenModal = () => {
         setOpenModal(!openModal)
     }
 
-    const handleConfirmModal = userId => {
-        onRemoveCustomer(userId)
+    const handleConfirmModal = id => {
+        onRemoveCustomer(id)
     }
 
     const handleRemoveCustomer = () => {
         handleToggleOpenModal()
     }
 
-
     return (
         <>
             <Card sx={{
-                maxWidth: 345,
-                height: '280px',
+                maxWidth: 500,
+                height: '500px',
                 marginLeft: '19px',
+                marginTop: '90px',
                 padding: '20px',
                 position: 'relative',
                 display: 'block',
@@ -45,16 +45,13 @@ const Cards = ({
                     marginBottom: '25px'
                 }}>Product List</h1>
 
-                <p>User: {userId}</p>
-                <p>Date: {date}</p>
-                <ul>
-                    {products.map((product) => (
-                        <p key={product.productId}>
-                            Product: {product.productId}, Quantity: {product.quantity}
-                        </p>
+                <p>Id: {id}</p>
+                <p>Title: {title}</p>
+                <p>Price: {price}</p>
+                <img src={image} alt={`Product ${id}`} style={{maxWidth: '40%'}} />
+                <p>Description: {description}</p>
 
-                    ))}
-                </ul>
+           
                 <div style={{
                     display: 'flex',
                     justifyContent: 'center',
@@ -83,4 +80,3 @@ const Cards = ({
 }
 
 export default Cards
-

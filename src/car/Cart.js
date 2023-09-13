@@ -1,65 +1,61 @@
-import {
-  Container,
-  styled,
-  Grid
-} from '@mui/material'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Container, styled, Grid } from '@mui/material';
+import Header from '../partials/Header';
+import CustomersCard from '../cards/CustomersCar';
+import Footer from '../bottomfooter/Footer';
 
-import axios from 'axios'
-import { useState, useEffect } from 'react'
-import Footer from '../bottomfooter/Footer'
-
-import Header from "../partials/Header"
-import CustomersCard from '../cards/CustomersCar'
- 
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   paddingTop: 0,
-}))
+  minHeight: 'calc(100vh - 64px)',
+  position: 'relative',
+}));
 
 const Cart = ({ children }) => {
-  const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('https://fakestoreapi.com/carts')
+    axios.get('https://fakestoreapi.com/products/1')
       .then(response => {
-        const data = response.data
-        setProducts(data)
-        setLoading(false)
+        const data = response.data;
+        setProduct(data);
+        setLoading(false);
       })
   }, [])
 
-  const handleRemoveCustomer = userId => {
-    axios.delete(`https://fakestoreapi.com/carts/${userId}`)
-    .then(() => {
-      const newCustomerState = products.filter(products => products.userId !== userId)
-      setProducts(newCustomerState)
-    })
+  const handleRemoveCustomer = id => {
+    axios.delete(`https://fakestoreapi.com/products/1${id}`)
+      .then(() => {
+        setProduct(null)
+      })
   }
 
   return (
-    <div style={{ background: '#e0e0e0' }}>
+    <div style={{ background: '#e0e0e0', position: 'relative'}}>
       <Header />
-      <StyledContainer>
+      <StyledContainer >
         {children}
         <Grid container>
-          {products.map(item => (
-            <Grid item xs={12} md={4} key={item.id} style={{ marginTop: '60px' }}>
+          {product && (
+            <Grid item xs={12} md={4}>
               <CustomersCard
-                id={item.id}
-                userId={item.userId}
-                date={item.date}
-                products={item.products}
-                image={item.image}
-                onRemoveCustomer={() => handleRemoveCustomer(item.userId)}
-              />
+                category={product.category}
+                title={product.title}
+                price={product.price}
+                description={product.description}
+                image={product.image}
+                id={product.id}
+                onRemoveCustomer={() => handleRemoveCustomer(product.id)}
+                />
             </Grid>
-          ))}
+          )}
         </Grid>
       </StyledContainer>
-      {!loading && <Footer />}
+          {!loading && <Footer style={{ position: 'absolute', bottom: 0 }} />}
     </div>
   )
 }
 
-export default Cart
+export default Cart;
