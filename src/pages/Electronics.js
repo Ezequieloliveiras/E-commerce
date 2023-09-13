@@ -43,7 +43,7 @@ const Electronic = ({ children }) => {
                 title={item.title}
                 price={item.price}
                 description={item.description}
-              
+                image={item.image}
               />
             </Grid>
           ))}

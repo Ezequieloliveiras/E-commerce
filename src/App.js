@@ -13,13 +13,11 @@ import ClothesMan from './pages/ClothesMan'
 import ClothesWomen from './pages/ClothesWomen'
 import Cart from './car/Cart'
 import Login from './pages/Login'
-import Teste from './car/Teste'
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/teste" element={<Teste />} />
         <Route path="/login" element={<Login />} />
         <Route path="/electronics" element={<Eletronic />} />
         <Route path="/jewelry" element={<Jewelry />} />
