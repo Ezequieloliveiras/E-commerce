@@ -31,11 +31,12 @@ const Cards = ({
     return (
 
         <CarText >
-            <h1 style={{
+            <p style={{
                 display: 'flex',
                 justifyContent: 'center',
-                marginTop: '30px'
-            }}>Product List</h1>
+                marginTop: '30px',
+                fontSize:'2.125rem'
+            }}>Product List</p>
 
             <div style={{
                 padding: '40px',
@@ -43,7 +44,6 @@ const Cards = ({
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
-
                 <div style={{
                     width: '1200px',
                     height: '800px',
@@ -62,11 +62,17 @@ const Cards = ({
                         alignItems: 'center'
                     }}>
                         <div style={{ marginBottom: '80px' }}>
-                            <img src={image} alt={`Product ${id}`} style={{ width: '260px' }} />
+                            <img
+                                src={image} alt={`Product ${id}`}
+                                style={{ width: '260px' }} />
                         </div>
                     </div>
                     <div style={{ display: 'flex' }}>
-                        <div style={{ width: '500px', height: '200px', padding: '25px' }}>
+                        <div style={{
+                            width: '500px',
+                            height: '200px',
+                            padding: '25px'
+                        }}>
                             <p><h2>{title}</h2></p>
                             <p>segundo quadrado</p>
                             <p><h4>Price:</h4> {price}</p>
@@ -100,7 +106,12 @@ const Cards = ({
                             </div>
                         </div>
                     </div>
-                    <div style={{ bottom: '0', marginBottom: '80px', position: 'absolute', width: '700px' }}>
+                    <div style={{
+                        bottom: '0',
+                        marginBottom: '80px',
+                        position: 'absolute',
+                        width: '700px'
+                    }}>
                         <p><h4>Description:</h4> {description}</p>
                     </div>
                 </div>

@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Container, styled, Grid } from '@mui/material'
+import { styled, Grid } from '@mui/material'
 import Header from '../partials/Header'
 import CustomersCard from '../cards/CustomersCar'
 import Footer from '../bottomfooter/Footer'
 
 const StyledContainer = styled('div')(({ theme }) => ({
-  paddingTop: 0,
-  marginRight: '0',
-  minHeight: 'calc(100vh - 64px)',
-  [`@media (min-width: 1200px)`]: {
-    maxWidth: 'unset', // Remove the max-width at this screen size
-  },
+  
 }))
 
 const Cart = ({ children }) => {

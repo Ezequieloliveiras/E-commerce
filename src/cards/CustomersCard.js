@@ -1,10 +1,13 @@
 import React from 'react'
 
-import Card from '@mui/material/Card'
-import CardHeader from '@mui/material/CardHeader'
-import CardMedia from '@mui/material/CardMedia'
-import CardActions from '@mui/material/CardActions'
-import Button from '@mui/material/Button'
+import {
+    Card,
+    CardHeader,
+    CardMedia,
+    CardActions,
+    Button,
+} from '@mui/material'
+
 
 const Cards = ({
     title,
@@ -49,7 +52,13 @@ const Cards = ({
                     <p style={{ fontSize: 30 }}>
                         {`$ ${price}`}
                     </p>
-                    <Button style={{ marginTop: '10px', background: '#424242' }} variant="contained">BUY</Button>
+                    <Button
+                        style={{
+                            marginTop: '10px',
+                            background: '#424242'
+                        }}
+                        variant="contained"
+                    >BUY</Button>
                 </CardActions>
             </Card>
         </>
