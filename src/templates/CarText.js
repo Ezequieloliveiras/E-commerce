@@ -7,11 +7,11 @@ const Container = styled('div')({
 
 const Title = ({children}) => {
   return (
-    <Container>
+    
       <Typography styled={{fontFamily:'Roboto, sans-serif'}} >
         {children}
       </Typography>
-    </Container>
+    
   )
 }
 

@@ -29,6 +29,7 @@ const Cards = ({
     }
 
     return (
+
         <CarText >
             <h1 style={{
                 display: 'flex',
@@ -36,10 +37,15 @@ const Cards = ({
                 marginTop: '30px'
             }}>Product List</h1>
 
-            <div style={{ padding: '40px', display: 'flex', }}>
+            <div style={{
+                padding: '40px',
+                display: 'block',
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}>
 
                 <div style={{
-                    width: '1300px',
+                    width: '1200px',
                     height: '800px',
                     padding: '40px',
                     display: 'flex',
@@ -55,19 +61,19 @@ const Cards = ({
                         justifyContent: 'center',
                         alignItems: 'center'
                     }}>
-                        <div style={{ marginBottom: '80px'}}>
-                            <img src={image} alt={`Product ${id}`} style={{ width: '300px' }} />
+                        <div style={{ marginBottom: '80px' }}>
+                            <img src={image} alt={`Product ${id}`} style={{ width: '260px' }} />
                         </div>
                     </div>
-                    <div style={{display:'flex'}}>
-                        <div style={{ width: '500px', height: '200px', padding:'25px' }}>
-                        <p><h2>{title}</h2></p>
+                    <div style={{ display: 'flex' }}>
+                        <div style={{ width: '500px', height: '200px', padding: '25px' }}>
+                            <p><h2>{title}</h2></p>
                             <p>segundo quadrado</p>
                             <p><h4>Price:</h4> {price}</p>
                         </div>
                         <div>
                             <div style={{
-                                width:'280px',
+                                width: '280px',
                                 height: '100%',
                                 borderRadius: '5px',
                                 boxShadow: '0px 0px 1px black',
@@ -92,11 +98,9 @@ const Cards = ({
                                     </Button>
                                 </div>
                             </div>
-                            
                         </div>
-
                     </div>
-                    <div style={{ bottom: '0', marginBottom: '80px', position: 'absolute', width:'700px' }}>
+                    <div style={{ bottom: '0', marginBottom: '80px', position: 'absolute', width: '700px' }}>
                         <p><h4>Description:</h4> {description}</p>
                     </div>
                 </div>
@@ -105,8 +109,8 @@ const Cards = ({
                 open={openModal}
                 onClose={handleToggleOpenModal}
                 onConfirm={handleConfirmModal}
-                title='Deseja realmente excluir esse cadastro?'
-                message='Ao confirmar nao será possível reverter essa operação'
+                title='Do you really want to delete this product from your shopping list?'
+                message='Once confirmed, it will not be possible to reverse this operation.'
             />
         </CarText>
     )
