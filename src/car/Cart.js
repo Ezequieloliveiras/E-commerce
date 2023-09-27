@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { styled, Grid } from '@mui/material'
-import Header from '../partials/Header'
+import Header from '../Partials/HeaderGeneral'
 import CustomersCard from '../cards/CustomersCar'
 import Footer from '../bottomfooter/Footer'
 

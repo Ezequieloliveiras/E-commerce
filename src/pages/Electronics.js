@@ -7,7 +7,7 @@ import {
   Grid
 } from '@mui/material'
 
-import Header from "../partials/HeaderGeneral"
+import Header from '../Partials/HeaderGeneral'
 import CustomersCard from '../cards/CustomersCard'
 import Footer from '../bottomfooter/Footer'
 import Title from '../templates/ElectronicsText'
